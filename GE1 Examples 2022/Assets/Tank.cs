@@ -14,9 +14,12 @@ public class Tank : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float f = Input.GetAxis("Vertical");
-        Debug.Log("f: " + f);
-        transform.Translate(0, 0, f * speed * Time.deltaTime);
+        float v = Input.GetAxis("Vertical");
+        Debug.Log("vertical: " + v);
+        transform.Translate(0, 0, v * speed * Time.deltaTime);
+        float h = Input.GetAxis("Horizontal");
+        transform.Rotate(Vector3.up * h *  speed * Time.deltaTime * 10);
+        Debug.Log("horizontal: " + h);
 
     }
 }
