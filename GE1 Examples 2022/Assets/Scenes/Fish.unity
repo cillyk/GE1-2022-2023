@@ -509,9 +509,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6e0069507a9364cbcc6c51efbe768f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 1
-  head: {fileID: 600007855}
-  tail: {fileID: 251647469}
+  Tail: {fileID: 600007856}
+  Head: {fileID: 251647470}
+  Frequency: 1
+  TailAmplitude: 10
+  HeadAmplitude: 20
+  theta: 0
 --- !u!1 &1932379423
 GameObject:
   m_ObjectHideFlags: 0

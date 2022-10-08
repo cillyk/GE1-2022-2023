@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class fishy : MonoBehaviour
 {
-    public int frequency = 1;
-    public GameObject head;
-    public GameObject tail;
+    public Transform Tail;
+    public Transform Head;
+
+    [Range(0,5)]
+    public int Frequency = 1;
+    
+    public float TailAmplitude=50; 
+    public float HeadAmplitude=50;
+
+    public float theta = 0;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject head = GameObject.FindGameObjectWithTag("head");
-        GameObject tail = GameObject.FindGameObjectWithTag("tail");
-  
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        head.transform.Rotate(1,0,0, Space.Self);
-        tail.transform.Rotate(1,0,0, Space.Self);
+        theta = Time.time * Frequency;
+        float y = TailAmplitude * Mathf.Sin(theta);
+        float x = HeadAmplitude * Mathf.Sin(theta);
+        Tail.localRotation = Quaternion.AngleAxis(y, Vector3.forward);
+        Head.localRotation = Quaternion.AngleAxis(x, Vector3.forward);
     }
 }
