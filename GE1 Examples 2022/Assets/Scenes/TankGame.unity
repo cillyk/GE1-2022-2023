@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 647946834}
   m_Layer: 0
   m_Name: wall
-  m_TagString: Untagged
+  m_TagString: brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,6 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 5
   height: 10
+  prefab: {fileID: 1813275748986334985, guid: 461bbc5a03457d54b8005d360d012d66, type: 3}
 --- !u!4 &647946835
 Transform:
   m_ObjectHideFlags: 0
@@ -949,6 +950,7 @@ GameObject:
   - component: {fileID: 1178152841}
   - component: {fileID: 1178152846}
   - component: {fileID: 1178152847}
+  - component: {fileID: 1178152848}
   m_Layer: 0
   m_Name: tank
   m_TagString: Untagged
@@ -1065,11 +1067,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b6f87aede3e4f40b61d5bf9fdc4884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6577131958101206330, guid: e1643820c86f865408879faa15aae09d, type: 3}
-  spawnPoint: {fileID: 1812732025}
-  fireRate: 5
   speed: 5
   rotSpeed: 180
+--- !u!114 &1178152848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178152840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538ff09e30d9bd944b8153fa8bc76bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6577131958101206330, guid: e1643820c86f865408879faa15aae09d, type: 3}
+  bulletSpawn: {fileID: 1812732025}
+  fireRate: 5
 --- !u!850595691 &1763065619
 LightingSettings:
   m_ObjectHideFlags: 0
