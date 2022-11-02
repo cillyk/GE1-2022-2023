@@ -1,10 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class TankController : MonoBehaviour
 {
+<<<<<<< Updated upstream
     private TankControls tc;
 
     void Awake()
@@ -75,38 +75,24 @@ public class TankController : MonoBehaviour
 
     /*
     private TankControls tc;
+=======
+    public float speed = 5;
+    public float rotSpeed = 100;
+    
+>>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
-        // Add listenets to events
-        tc.Land.Shoot.started += Shoot;
-    }
-
-    void Awake()
-    {
-        tc = new TankControls();
-    }
-
-    void Shoot(InputAction.CallbackContext context)
-    {
-
-    }
-
-    void OnEnable()
-    {
-        tc.Enable();
-    }
-
-    void OnDisable()
-    {
-        tc.Disable();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        float f = tc.Land.Move.ReadValue<float>();
-        Debug.Log(f);
+        float c = Input.GetAxis("Vertical");
+        transform.Translate(0, 0, c * speed * Time.deltaTime);
+
+        float r = Input.GetAxis("Horizontal");
+        transform.Rotate(0, r * rotSpeed * Time.deltaTime, 0);
     }
-    */
 }
