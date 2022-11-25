@@ -5,7 +5,24 @@ public class PhysicsFactory : MonoBehaviour {
 
     public LayerMask groundLM;
     public GameObject wormPrefab;
-  
+    void CreateTower(float radius, int height, int segment, Vector3 spawn)
+    {
+         float thetax = (Mathf.PI * 2.0f) / (float)segment;
+        for (int h = 0; h < height; h++)
+        {
+            for (int i = 0; i < segment; i++)
+            {
+                float theta = thetax * i + (h * thetax * 0.5f);
+                float x = radius * Mathf.Sin(theta);
+                float z = radius * Mathf.Cos(theta) + 20;
+                Vector3 pos = spawn + new Vector3(x, h, z);                
+                GameObject cube = CreateBrick(pos.x, pos.y, pos.z, 1, 1, 1);
+                cube.transform.rotation = Quaternion.AngleAxis(theta * Mathf.Rad2Deg, Vector3.up);
+                cube.GetComponent<Renderer>().material.color = Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 0.8f);
+            }
+        }
+       
+    }
 
     
 
