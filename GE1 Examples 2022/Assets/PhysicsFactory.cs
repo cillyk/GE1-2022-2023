@@ -5,9 +5,7 @@ public class PhysicsFactory : MonoBehaviour {
 
     public LayerMask groundLM;
     public GameObject wormPrefab;
-    void CreateTower(float radius, int height, int segments, Vector3 point)
-    {
-    }
+  
 
     
 
@@ -136,6 +134,7 @@ public class PhysicsFactory : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.C))
         {
+            Debug.Log("pressed C to create car");
             RaycastHit raycastHit;
             GameObject mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out raycastHit))
@@ -166,13 +165,14 @@ public class PhysicsFactory : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.U))
         {
+            Debug.Log("spawned tower");
             RaycastHit rch;
             GameObject mainCamera = GameObject.FindGameObjectWithTag("MainCamera");            
             if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out rch, 100))
             {
                 Vector3 p = rch.point;
                 p.y = 0.5f;
-                CreateTower(3, 10, 12, p);
+                CreateTower(3, 10, 11, p);
             }
         }
 
