@@ -3,7 +3,10 @@ guid: 685a99f03d773bb479c880d1564cf21f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - clip: {instanceID: 0}
+  - amgMic: {instanceID: 0}
+  - amgMaster: {fileID: 24300002, guid: 006abfb4d33d03443b46e83f5a891b43, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
